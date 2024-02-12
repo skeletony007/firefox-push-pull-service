@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+profile_name=$1
+if [[ -z "$profile_name" ]]; then
+    profile_name='default-release'
+fi
+
+case "$(uname -s)" in
+    'Darwin')
+        profiles_dir="$HOME/Library/Application Support/Firefox/Profiles"
+        policy_path='/Applications/Firefox.app/Contents/Resources/distribution/policies.json'
+        ;;
+    *)
+        echo 'Unsupported operating system.'; exit 1
+        ;;
+esac

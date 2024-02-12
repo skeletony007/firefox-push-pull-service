@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+arkenfox_prefs_cleaner="$profile_dir/prefsCleaner.sh"
+if ! [[ -f "$arkenfox_prefs_cleaner" ]]; then
+    curl -sS -o "$arkenfox_prefs_cleaner" 'https://raw.githubusercontent.com/arkenfox/user.js/master/prefsCleaner.sh' &&
+    chmod +x "$arkenfox_prefs_cleaner"
+fi
+"$arkenfox_prefs_cleaner" -s
+arkenfox_updater="$profile_dir/updater.sh"
+if ! [[ -f "$arkenfox_updater" ]]; then
+    curl -sS -o "$arkenfox_updater" 'https://raw.githubusercontent.com/arkenfox/user.js/master/updater.sh' &&
+    chmod +x "$arkenfox_updater"
+fi
+"$arkenfox_updater" -usb

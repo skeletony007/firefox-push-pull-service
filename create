@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source .parts/init
+
+firefox -CreateProfile "$profile_name" && \
+profile_dir=$(find "$profiles_dir" -type d -name "*.$profile_name")
+
+source .parts/arkenfox
+
+## see https://github.com/passff/passff-host#installation
+curl -sS 'https://github.com/passff/passff-host/releases/latest/download/install_host_app.sh' | bash -s -- firefox

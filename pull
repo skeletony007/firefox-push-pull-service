@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+source .parts/init
+
+profile_dir=$(find "$profiles_dir" -type d -name "*.$profile_name")
+
+while IFS= read -r file; do
+    file_path="$profile_dir/$file"
+    if [[ -f "$file_path" ]]; then
+        mkdir -p './profile'
+        cp "$file_path" "./profile/$file"
+    fi
+done < .profileinclude
+if [[ -f "$policy_path" ]]; then
+    mkdir -p './firefox/distribution'
+    cp "$policy_path" ./firefox/distribution/policies.json
+fi

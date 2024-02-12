@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source .parts/init
+
+profile_dir=$(find "$profiles_dir" -type d -name "*.$profile_name")
+
+while IFS= read -r file; do
+    cp "./profile/$file" "$profile_dir/$file"
+done < .profileinclude
+cp ./firefox/distribution/policies.json "$policy_path"
+
+source .parts/arkenfox
