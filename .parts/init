@@ -10,6 +10,10 @@ case "$(uname -s)" in
         profiles_dir="$HOME/Library/Application Support/Firefox/Profiles"
         policy_path='/Applications/Firefox.app/Contents/Resources/distribution/policies.json'
         ;;
+    'Linux')
+        profiles_dir="$HOME/.mozilla/firefox"
+        policy_path="$HOME/.mozilla/firefox/distribution/policies.json"
+        ;;
     *)
         echo 'Unsupported operating system.'; exit 1
         ;;
