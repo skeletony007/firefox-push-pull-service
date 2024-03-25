@@ -5,8 +5,10 @@ source .parts/init
 profile_dir=$(find "$profiles_dir" -type d -name "*.$profile_name")
 
 while IFS= read -r file; do
-    cp "./profile/$file" "$profile_dir/$file"
+    mkdir -p "$(dirname "$profile_dir/$file")"
+    cp -r "./profile/$file" "$profile_dir/$file"
 done < .profileinclude
+mkdir -p "$(dirname "$policy_path")"
 cp ./firefox/distribution/policies.json "$policy_path"
 
 source .parts/arkenfox
