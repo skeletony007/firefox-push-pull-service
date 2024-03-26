@@ -12,7 +12,7 @@ case "$(uname -s)" in
         ;;
     'Linux')
         profiles_dir="$HOME/.mozilla/firefox"
-        policy_path="$HOME/.mozilla/firefox/distribution/policies.json"
+        policy_path="/usr/lib/firefox/distribution/policies.json"
         ;;
     *)
         echo 'Unsupported operating system.'; exit 1
