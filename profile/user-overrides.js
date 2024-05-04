@@ -35,6 +35,7 @@ user_pref("widget.disable-swipe-tracker", true);
  * Firefox will not have to parse webpage for Reader when navigating ***/
 user_pref("reader.parse-on-load.enabled", false);
 /* full screen video player ***/
+user_pref("full-screen-api.macos-native-full-screen", false);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
 user_pref("full-screen-api.warning.delay", -1);
