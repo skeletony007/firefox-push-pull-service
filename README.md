@@ -1,3 +1,8 @@
+> [!WARNING]
+> This project has moved to
+> <https://github.com/skeletony007/ansible-roles/tree/bac65cad05663557257262baee6aede0ff2e67cc/firefox>
+> and is no longer maintained here.
+
 ### Firefox CLI profile / policy manager
 
 **`push`**, **`pull`**, **`create`** 
